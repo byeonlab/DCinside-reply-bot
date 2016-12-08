@@ -2,6 +2,7 @@
 A reply bot that corrects the wrong grammar.
 
 Programming Language: Python 3.5
+
 Target Website Language: Korean
 
 It checks the texts in posts that users uploaded on website 'Dcinside' (https://www.dcinside.com).
