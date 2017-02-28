@@ -5,9 +5,9 @@ Programming Language: Python 3.5
 
 Target Website Language: Korean
 
-It checks the texts in posts that users uploaded on website 'Dcinside' (https://www.dcinside.com).
+Go through posts on website 'Dcinside' (https://www.dcinside.com).
 
-1. Checks frequent grammatical errors in posts and comments using regex.
+1. Find frequent grammatical errors in posts and comments using regex.
 
 2. Post a comment with correction.
 
