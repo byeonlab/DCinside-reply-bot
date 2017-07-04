@@ -17,16 +17,13 @@ def remove_repetition(List,i,result):
     if  i<len(List):
         if List[i] in result:
             return remove_repetition(List,i+1,result) 
-        else:
-            return remove_repetition(List,i+1,result+List[i:i+1])
-    else:
-        return result
+        return remove_repetition(List,i+1,result+List[i:i+1])
+    return result
 
 def get_post_lists(post_nums,i,List):
     if i< len(post_nums):
         return get_post_lists(post_nums,i+1,List+[post_nums[i].get_text(strip=True)])
-    else:
-        return ascend_sort(List,0,[],[],[])
+    return ascend_sort(List,0,[],[],[])
 
 def ascend_sort(List,i,smaller,pivot,greater):
     if 1<len(List):
@@ -37,12 +34,9 @@ def ascend_sort(List,i,smaller,pivot,greater):
                 return ascend_sort(List,i+1,smaller,pivot+List[i:i+1],greater)
             if List[i]<List[len(List)-1]:
                 return ascend_sort(List,i+1,smaller+List[i:i+1],pivot,greater)
-            else:
-                return ascend_sort(List,i+1,smaller,pivot,greater)
-        else:
-            return ascend_sort(smaller,0,[],[],[])+pivot+ascend_sort(greater,0,[],[],[])
-    else:
-        return List
+            return ascend_sort(List,i+1,smaller,pivot,greater)
+        return ascend_sort(smaller,0,[],[],[])+pivot+ascend_sort(greater,0,[],[],[])
+    return List
 
 def grammar_correction(texts,memo_area,send_button,reciever):
     output1=re.findall(r"안되 |안되|되서|되도(?=^록)",texts)
@@ -64,7 +58,6 @@ def grammar_correction(texts,memo_area,send_button,reciever):
 
 
 def get_title_text(driver):
-
     title=driver.find_element_by_class_name('wt_subject')
     _content=title.find_element_by_tag_name("dd")
     content_text=_content.text
